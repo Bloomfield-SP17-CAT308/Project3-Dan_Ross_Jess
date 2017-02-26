@@ -19,6 +19,6 @@ public class PickupPlat : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		gameCon.GetKeyPlat ();
-		Destroy (this);
+		Destroy (this.gameObject);
 	}
 }
