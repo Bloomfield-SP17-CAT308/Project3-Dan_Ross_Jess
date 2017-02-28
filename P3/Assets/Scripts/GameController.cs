@@ -75,7 +75,7 @@ public class GameController : MonoBehaviour
 
 		hudInfo += "Location: " + (lvlName) + "\n";
 		hudInfo += "Deaths: " + deaths + "\n";
-		hudInfo += "Time: " + time.ToString ("F2");
+		//hudInfo += "Time: " + time.ToString ("F2");
 
 		hud.text = hudInfo;
 
@@ -90,32 +90,18 @@ public class GameController : MonoBehaviour
 			hasKeyPlat = true;*/
 
 		if (Input.GetKeyDown (KeyCode.P)) {
-			keyPlat = 0;
-			hasKeyPlat = false;
-			Debug.Log ("Platform Key Reset");
+			GetKeyPlat ();
+			Debug.Log ("Platform Key Get");
 		}
 
 		if (Input.GetKeyDown (KeyCode.E)) {
-			keyExp = 0;
-			hasKeyExp = false;
-			Debug.Log ("Explore Key Reset");
+			GetKeyExp ();
+			Debug.Log ("Explore Key Get");
 		}
 
 		if (Input.GetKeyDown (KeyCode.Alpha0)) {
 			currentLevel = 0;
 			Debug.Log ("Loading Hub");
-			LoadLevel ();
-		}
-
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
-			currentLevel = 1;
-			Debug.Log ("Loading Explore");
-			LoadLevel ();
-		}
-
-		if (Input.GetKeyDown (KeyCode.Keypad2)) {
-			currentLevel = 2;
-			Debug.Log ("Loading Platform");
 			LoadLevel ();
 		}
 	}

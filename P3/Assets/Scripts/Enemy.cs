@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, patrollingInterestPoint.transform.position, step);
 
 		float distance = Vector3.Distance(transform.position, patrollingInterestPoint.transform.position);
-		if(distance==0) {
+		if(distance < 1) {
 			SelectRandomPatrolPoint();
 		}
 	}
