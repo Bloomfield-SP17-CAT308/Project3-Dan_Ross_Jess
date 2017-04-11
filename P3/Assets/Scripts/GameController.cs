@@ -64,13 +64,13 @@ public class GameController : MonoBehaviour
 
 		lvlName = "Level Hub";
 
-		if (currentLevel == 1) {
-			lvlName = "Exploring";
-		} 
-
 		if (currentLevel == 2) {
 			lvlName = "Platforming";
 		}
+
+		if (currentLevel == 3) {
+			lvlName = "Exploring";
+		} 
 			
 
 		hudInfo += "Location: " + (lvlName) + "\n";
@@ -99,8 +99,8 @@ public class GameController : MonoBehaviour
 			Debug.Log ("Explore Key Get");
 		}
 
-		if (Input.GetKeyDown (KeyCode.Alpha0)) {
-			currentLevel = 0;
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			currentLevel = 1;
 			Debug.Log ("Loading Hub");
 			LoadLevel ();
 		}
@@ -176,8 +176,8 @@ public class GameController : MonoBehaviour
 
 	public void Win ()
 	{
+		DeletePlayerValues ();
 		//isRunning = false;
-
 		//SceneManager.LoadScene(3);
 		//gameOverUI.enabled = true;
 		//winningParticles.Play();
